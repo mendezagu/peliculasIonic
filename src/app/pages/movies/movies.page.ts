@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
 import { MovieService } from 'src/app/services/movie.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -12,9 +13,24 @@ export class MoviesPage implements OnInit {
   movies = <any>[] ;
   currentPage = 1;
   imageBaseUrl = environment.images;
+  authenticated = false;
 
 
-  constructor( private movieService: MovieService, private loadingCtrl: LoadingController) { }
+  constructor(
+    private movieService: MovieService,
+    private loadingCtrl: LoadingController,
+    private router: Router) { }
+
+    ionViewWillEnter() {
+      if (!this.isAuthenticated()) {
+        this.router.navigateByUrl('/login');
+      }
+    }
+
+    isAuthenticated(): boolean {
+      const user = localStorage.getItem('usuario');
+      return user !== null;
+    }
 
   ngOnInit() {
     this.loadMovies();
@@ -37,10 +53,5 @@ export class MoviesPage implements OnInit {
     })
 
   }
-
-  /*loadMore(event:InfiniteScrollCustomEvent){
-    this.currentPage++;
-    this.loadMovies(event);
-  }*/
 
 }

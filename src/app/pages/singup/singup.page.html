@@ -1,0 +1,49 @@
+<ion-header color="dark" class="ion-no-border">
+  <ion-toolbar color="dark" >
+    <ion-buttons slot="start">
+    <ion-button color ="primary" routerLink="/login">
+    <ion-icon slot="icon-only" name ="arrow-back" ></ion-icon>
+  </ion-button>
+  <ion-title>
+    SINGUP 
+  </ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color = "dark">
+  <ion-card>
+    <ion-card-header color = "dark">
+    </ion-card-header>
+    <ion-card-content color = "dark">
+      <form [formGroup]="formularioLogin" (keyup.enter)="guardar()" color = "dark">
+
+        <ion-item color = "dark">
+          <ion-label position="floating">Username</ion-label>
+          <ion-input [(ngModel)]="datos.nombre" formControlName="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item color = "dark">
+          <ion-label position="floating">Mail</ion-label>
+          <ion-input [(ngModel)]="datos.correo" formControlName="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item color = "dark">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input [(ngModel)]="datos.password" formControlName="password" type="password" ></ion-input>
+        </ion-item>
+
+        <ion-item color = "dark">
+          <ion-label position="floating">Confirm password</ion-label>
+          <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
+
+          <ion-button color="medium" (click) = "singup()">  
+            Singup
+          </ion-button>
+        </ion-item>
+        <br>
+        
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

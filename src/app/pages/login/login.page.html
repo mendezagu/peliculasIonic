@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-title>LOGIN</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+
+  <ion-card>
+    <ion-item color="dark">
+      <ion-label>Username</ion-label>
+      <ion-input [(ngModel)]="credenciales.correo"></ion-input>
+    </ion-item>
+    
+    <ion-item color="dark">
+      <ion-label >password</ion-label>
+      <ion-input [(ngModel)]="credenciales.password" type="password"></ion-input>
+    </ion-item>
+  
+    <ion-item color="dark">
+      <ion-button (click)="login()" color="medium">
+        Login
+      </ion-button>
+    </ion-item>
+    
+    <ion-item color = "dark">
+
+      <ion-button color="medium" routerLink="/singup">
+        singup
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
+
+
