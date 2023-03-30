@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
 
   async login(){
     console.log('credenciales ->',this.credenciales)
-    const res = await this.auth.login(this.credenciales.correo,this.credenciales.password).catch(error =>{
+    const res = await this.auth.login(this.credenciales.correo,this.credenciales.password).catch(() =>{
       alert('Usuario o Contraseña invalido');
       
     })

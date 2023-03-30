@@ -23,7 +23,7 @@ export class MoviesPage implements OnInit {
 
     ionViewWillEnter() {
       if (!this.isAuthenticated()) {
-        this.router.navigateByUrl('/login');
+        //this.router.navigateByUrl('/login');
       }
     }
 
