@@ -1,0 +1,8 @@
+// Importa las variables de Bootstrap
+@import '~bootstrap/scss/_variables.scss';
+
+// Sobrescribe las variables de Bootstrap según tus necesidades
+$primary: #3880ff;
+
+// Importa Bootstrap después de sobrescribir las variables
+@import '~bootstrap/scss/bootstrap.scss';
