@@ -8,6 +8,7 @@ import {
 import { AlertController } from '@ionic/angular';
 import { UserI } from 'src/app/models/models';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 //import {FirestoreService } from 'src/app/services/firestoreservice'
 
 @Component({
@@ -31,6 +32,7 @@ export class SingupPage implements OnInit {
   constructor(public fb: FormBuilder,
     public alertController: AlertController,
     private auth: AuthService,
+    private router: Router
     //private firestore: FirestoreService
     ) {
 
@@ -61,8 +63,11 @@ export class SingupPage implements OnInit {
 
   async singup(){
     console.log('datos ->',this.datos);
+    this.router.navigate(['./login'])
     const res = await this.auth.singUpUser(this.datos).catch(error =>{
       console.log('error')
+      
+      
     })
    /* if(res){
       alert ('usuario creado con exito')
