@@ -33,14 +33,14 @@
         <ion-label>{{ movie.budget | currency: 'USD'}}</ion-label>
       </ion-item>
 
-      <ul class="list-inline rating-list" *ngFor="let star of stars; let i=index" >
+      <!--<ul class="list-inline rating-list" *ngFor="let star of stars; let i=index" >
         <li slot="end" (click)="counStar(star)" [ngClass]="{'selected': (star <= selectedValue)}" (mouseover)="addClass(star)"
           (mouseout)="removeClass()"> <span class="material-icons">
             <ion-icon name="star-outline"></ion-icon>
           </span>
       
         </li>
-      </ul>
+      </ul>-->
 
       
 
